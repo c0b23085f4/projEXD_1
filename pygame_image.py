@@ -13,7 +13,6 @@ def main():
     # 練習2
     kk_img = pg.image.load("fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, False)
-    # kk_img = pg.transform.rotozoom(kk_img, 10.0)
 
 
     tmr = 0
@@ -21,7 +20,9 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
-        screen.blit(bg_img, [0, 0])
+        x = -(tmr%800)
+
+        screen.blit(bg_img, [x, 0])
         screen.blit(kk_img, [300, 200])
         pg.display.update()
         tmr += 1        
